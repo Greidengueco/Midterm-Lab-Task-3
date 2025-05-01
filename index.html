@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Midterm Lab Task 3 - Data Science Salary & Job Trends Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html, body {
+      height: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      color: #00f0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .content {
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00f0ff;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+      position: relative;
+      z-index: 2;
+      animation: floating 5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+      overflow: hidden;  /* Hide scrollbars */
+      overflow-y: scroll;  /* Allow vertical scroll */
+      max-height: 85vh;  /* Max height for scrolling */
+    }
+
+    /* Hide the scrollbar */
+    .container::-webkit-scrollbar {
+      display: none; /* Hides the scrollbar in webkit browsers (Chrome, Safari) */
+    }
+
+    .container {
+      scrollbar-width: none; /* Hides the scrollbar in Firefox */
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8em;
+      color: #00f0ff;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #00f0ff;
+      padding-bottom: 10px;
+    }
+
+    h2, h3 {
+      margin-top: 20px;
+      color: #ff3c57;
+      font-size: 1.5em;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .system-btn {
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid #00f0ff;
+      color: #00f0ff;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+      transform: scale(1);
+    }
+
+    .system-btn:hover {
+      background-color: #00f0ff;
+      color: black;
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    .system-btn:active {
+      transform: scale(1.05); /* Slight shrink when clicked */
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="container">
+      <h1>MIDTERM LAB TASK 3</h1>
+
+      <p style="color: #ff3c57; font-size: 1.2em; text-align: center;">
+        This portfolio focuses on creating an interactive Data Science Salary & Job Trends Dashboard using Excel.
+        It examines job distribution, salary trends across roles and company sizes, and employment patterns by sector
+        through pivot tables, charts, slicers, and an optional map for enhanced visualization.
+      </p>
+
+      <h2>Step-by-Step Guide</h2>
+
+      <h3>1. Use the Provided Data</h3>
+      <ul>
+        <li>Open the Worksheet containing Uncleaned DS Jobs and the following Transform Tables:</li>
+        <ul>
+          <li>Salary by Role</li>
+          <li>Salary by State</li>
+          <li>Salary by Company Size</li>
+        </ul>
+      </ul>
+
+      <h3>2. Design the Dashboard to Highlight Key Insights</h3>
+      <ul>
+        <li>State with the most Data Science jobs</li>
+        <li>Job role with the highest average salary</li>
+        <li>Company size offering the highest salary</li>
+        <li>Sector with the highest and lowest number of Data Science jobs</li>
+        <li>Sector with the minimum and maximum average salary</li>
+      </ul>
+
+      <h3>3. Create Pivot Tables</h3>
+      <ul>
+        <li>Use pivot tables to summarize data on sector-specific jobs and salaries.</li>
+      </ul>
+
+      <h3>4. Generate Visualizations</h3>
+      <ul>
+        <li>Create bar, column, or pie charts to represent salary trends and job distribution.</li>
+      </ul>
+
+      <h3>5. Insert Slicers for Interactivity</h3>
+      <ul>
+        <li>Add slicers for filtering by role type, company size, and state to make the dashboard interactive.</li>
+      </ul>
+
+      <h3>6. Add an Optional Map</h3>
+      <ul>
+        <li>If your Excel version supports it, include a map visualization to display job distribution by state.</li>
+      </ul>
+
+      <h3>7. Apply Design and Formatting</h3>
+      <ul>
+        <li>Adjust colors, fonts, and layout to enhance the dashboard's visual appeal.</li>
+      </ul>
+
+      <h3>8. Finalize the Dashboard</h3>
+      <ul>
+        <li>Ensure all necessary visuals and reports are included.</li>
+        <li>Make sure the slicers are functional and interactive.</li>
+      </ul>
+
+      <h2>Screenshots of Dashboard</h2>
+      <img src="https://github.com/user-attachments/assets/eb2c0022-c173-4be8-909f-d0d62b9a3226" alt="Dashboard Screenshot 1" />
+      <img src="https://github.com/user-attachments/assets/4d6cdb07-00e7-4199-a784-058026c18c12" alt="Dashboard Screenshot 2" />
+      <img src="https://github.com/user-attachments/assets/aeaa2b38-9b0b-43e6-81f3-e6a3cc667b1b" alt="Dashboard Screenshot 3" />
+
+      <h2>Analysis Screenshots</h2>
+      <img src="https://github.com/user-attachments/assets/97f246ed-e368-450c-8d73-c210f81ab93a" alt="Analysis Screenshot 1" />
+      <img src="https://github.com/user-attachments/assets/9e9d9df1-3adf-47af-ac4f-f301518b44c3" alt="Analysis Screenshot 2" />
+      <img src="https://github.com/user-attachments/assets/9518a48d-d484-4aa8-b372-20608c045c5a" alt="Analysis Screenshot 3" />
+      <img src="https://github.com/user-attachments/assets/f8c0ec20-bb4a-498e-8cc2-c1779855135f" alt="Analysis Screenshot 4" />
+      <img src="https://github.com/user-attachments/assets/711f3c85-6fee-46b9-8514-5bd12737a679" alt="Analysis Screenshot 5" />
+
+      <div class="button-row">
+        <a href="https://greidengueco.github.io/EDM-Portfolio/" class="system-btn">BACK TO PORTFOLIO</a>
+        <a href="https://github.com/user-attachments/files/19262195/Midterm.lab.task.3.Greiden.xlsx" class="system-btn" target="_blank">VIEW ON GITHUB</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
