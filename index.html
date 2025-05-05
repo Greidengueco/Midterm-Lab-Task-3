@@ -48,30 +48,23 @@
       z-index: 2;
       animation: floating 5s ease-in-out infinite;
       transition: transform 0.3s ease;
-      overflow: hidden;  /* Hide scrollbars */
-      overflow-y: scroll;  /* Allow vertical scroll */
-      max-height: 85vh;  /* Max height for scrolling */
+      overflow: hidden;
+      overflow-y: scroll;
+      max-height: 85vh;
     }
 
-    /* Hide the scrollbar */
     .container::-webkit-scrollbar {
-      display: none; /* Hides the scrollbar in webkit browsers (Chrome, Safari) */
+      display: none;
     }
 
     .container {
-      scrollbar-width: none; /* Hides the scrollbar in Firefox */
+      scrollbar-width: none;
     }
 
     @keyframes floating {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-      100% {
-        transform: translateY(0);
-      }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
     }
 
     h1 {
@@ -125,11 +118,11 @@
     .system-btn:hover {
       background-color: #00f0ff;
       color: black;
-      transform: scale(1.1); /* Zoom effect on hover */
+      transform: scale(1.1);
     }
 
     .system-btn:active {
-      transform: scale(1.05); /* Slight shrink when clicked */
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
